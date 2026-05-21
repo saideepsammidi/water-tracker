@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Water Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>💧 Water Tracker</h1>
+      <p id="today-date" class="date"></p>
+    </header>
+
+    <section class="today-section">
+      <div class="bottle-wrap">
+        <div class="bottle">
+          <div class="bottle-fill" id="bottle-fill"></div>
+          <div class="bottle-label" id="bottle-label">0 / 8 cups</div>
+        </div>
+      </div>
+      <p id="motivation" class="motivation">Start drinking!</p>
+    </section>
+
+    <section class="buttons">
+      <button class="btn btn-sm" onclick="logWater(1)">+ 1 Cup<span>8 oz</span></button>
+      <button class="btn btn-md" onclick="logWater(2)">+ Tall Glass<span>16 oz</span></button>
+      <button class="btn btn-lg" onclick="logWater(4)">+ Full Bottle<span>32 oz</span></button>
+      <button class="btn btn-undo" onclick="undo()">↩ Undo</button>
+    </section>
+
+    <section class="heatmap-section">
+      <h2>History</h2>
+      <div class="heatmap-legend">
+        <span>Less</span>
+        <div class="legend-cell" style="--c:#ebedf0"></div>
+        <div class="legend-cell" style="--c:#b6dcf5"></div>
+        <div class="legend-cell" style="--c:#64b5e8"></div>
+        <div class="legend-cell" style="--c:#2176ae"></div>
+        <div class="legend-cell" style="--c:#0d4f8b"></div>
+        <span>Goal</span>
+      </div>
+      <div class="heatmap-scroll">
+        <div class="heatmap-container">
+          <div class="month-labels" id="month-labels"></div>
+          <div class="heatmap-grid-wrap">
+            <div class="day-labels">
+              <span>Mon</span><span></span><span>Wed</span><span></span>
+              <span>Fri</span><span></span><span>Sun</span>
+            </div>
+            <div class="heatmap" id="heatmap"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="tooltip" class="tooltip"></div>
+  <script src="app.js"></script>
+</body>
+</html>
